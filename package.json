@@ -1,0 +1,15 @@
+{
+  "name": "simple-check-app",
+  "version": "1.0.0",
+  "description": "入力が「あ」なら成功、それ以外は失敗を返すシンプルなWebアプリ（Express + static frontend）",
+  "main": "server.js",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
