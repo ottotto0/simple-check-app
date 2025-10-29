@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 
 app = Flask(__name__)
 
@@ -8,10 +8,15 @@ def index():
     if request.method == "POST":
         text = request.form.get("text", "").strip()
         if text == "あ":
-            result = "成功！"
+            # 成功なら success ページへリダイレクト
+            return redirect(url_for("success"))
         else:
             result = "失敗"
     return render_template("index.html", result=result)
+
+@app.route("/success")
+def success():
+    return render_template("success.html")
 
 
 if __name__ == "__main__":
